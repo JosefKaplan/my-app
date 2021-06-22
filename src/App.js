@@ -1,15 +1,10 @@
-//importing styles for material-ui
-import { createMuiTheme, ThemeProvider,makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
-
-// importing custom components
-import nvbar from './components/nvbar/nvbar';
-import grd from './components/grd/grd';
-import foot from './components/foot/foot';
-
+import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import {Typography} from '@material-ui/core'; 
+import NavBar from './components/NavBar'
+import Grid from './components/Grid'
+import Footer from './components/Footer'
 import './App.css';
-
-// importing icons from mateial-ui for grd components
+//changes to imports 
 import SecurityIcon from '@material-ui/icons/Security';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
@@ -23,7 +18,7 @@ const theme = createMuiTheme({
       main:"#2e1667",
     },
     secondary: {
-      main: "#c7d8ed",
+      main:"#c7d8ed",
     },
   },
   typography: {
@@ -37,7 +32,7 @@ const theme = createMuiTheme({
       },
     h5: {
       fontWeight: 100,
-      lineHeight:'2rem',
+      lineHeight: '2rem',
     },
   },
 });
@@ -48,13 +43,13 @@ const styles = makeStyles({
     margin: "auto",
     textAlign: "center"
   },
-  bigSpace: { //big padding
+  bigSpace: {
     marginTop: "5rem"
   },
-  littleSpace:{ //small padding
+  littleSpace:{
     marginTop: "2.5rem",
   },
-  grd:{
+  grid:{
     display: "flex", 
     justifyContent: "center",
     alignItems: "center",
@@ -63,11 +58,12 @@ const styles = makeStyles({
 })
 
 function App() {
-  const classes = styles();
+  const classes = styles(); 
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <nvbar/>
+        <NavBar/>
         <div className={classes.wrapper}>
           <Typography variant="h4" className={classes.bigSpace} color="primary">
              At Rocket.io we are passionate about software
@@ -76,18 +72,18 @@ function App() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales congue tristique. Cras non pretium sem. Duis interdum lorem sit amet ligula pretium, sed rutrum urna semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus egestas gravida ullamcorper.
           </Typography>
         </div>
-        <div className={`${classes.grd} ${classes.bigSpace}`}>
-          <grd icon={<SecurityIcon style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Secure" btnTitle="Show me More" />
-          <grd icon={<EventNoteIcon style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Reliable" btnTitle="Show me More"/>
-          <grd icon={<TrendingUpIcon style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Performant" btnTitle="Show me More"/>
+        <div className={`${classes.grid} ${classes.bigSpace}`}>
+          <Grid icon={<SecurityIcon style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Secure" btnTitle="Show me More" />
+          <Grid icon={<EventNoteIcon style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Reliable" btnTitle="Show me More"/>
+          <Grid icon={<TrendingUpIcon style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Performant" btnTitle="Show me More"/>
         </div>
-        <div className={`${classes.grd} ${classes.littleSpace}`}>  
-          <grd icon={<ImportExportIcon style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Modular" btnTitle="Show me More"/>
-          <grd icon={<ComputerIcon style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Multi-Platform" btnTitle="Show me More"/>
-          <grd icon={<HttpIcon style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Connected" btnTitle="Show me More"/>
+        <div className={`${classes.grid} ${classes.littleSpace}`}>  
+          <Grid icon={<ImportExportIcon style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Modular" btnTitle="Show me More"/>
+          <Grid icon={<ComputerIcon style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Multi-Platform" btnTitle="Show me More"/>
+          <Grid icon={<HttpIcon style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Connected" btnTitle="Show me More"/>
         </div>
         <div className={classes.bigSpace}>
-          <foot/>
+          <Footer/>
         </div>
       </ThemeProvider>
     </div>

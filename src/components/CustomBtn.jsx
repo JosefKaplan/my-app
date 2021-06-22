@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '@material-ui/core' //imports button from ui-core
-import { withStyles } from '@material-ui/core/styles' //imports hooks for using css inside react component
+import {Button} from '@material-ui/core'
+import {withStyles} from '@material-ui/core/styles'
 
 const StyledButton = withStyles({
     root: {
@@ -10,25 +10,25 @@ const StyledButton = withStyles({
         height: "44px",
         padding: "0 25px",
         boxSizing: "border-box",
-        borderRaadius: 0,
+        borderRadius: 0, 
         background: "#4f25f7",
         color: "#fff",
         transform: "none",
         boxShadow: "6px 6px 0 0 #c7d8ed",
         transition: "background .3s,border-color .3s,color .3s",
-        "&hover": {
-            background: "#4f25f7"
-        },
+        "&:hover": {
+            backgroundColor:  "#4f25f7"
+          },
     },
     label: {
-        textTransfrom: 'capitalize',
+      textTransform: 'capitalize',
     },
-})(Button);
+  })(Button);
 
-export default function custombtn(props) {
+function CustomBtn(props) {
     return (
-            <StyledButton variant="contained">
-                {props.txt}
-            </StyledButton>
+        <StyledButton variant="contained">{props.txt}</StyledButton>
     )
 }
+
+export default CustomBtn
