@@ -25,7 +25,7 @@ const StyledButton = withStyles({
     },
 })(Button);
 
-export default function CustomBtn(props) {
+export default function custombtn(props) {
     return (
             <StyledButton variant="contained">
                 {props.txt}

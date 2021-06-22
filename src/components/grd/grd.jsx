@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
-import CustomBtn from '../CustomBtn/CustomBtn'
+import custombtn from '../custombtn/custombtn'
 
 const styles = makeStyles({
     wrapper: {
@@ -15,7 +15,7 @@ const styles = makeStyles({
     }
 })
 
-export default function Grid(props) {
+export default function grd(props) {
     const {icon, title, btnTitle} = props; //adds props. to classes
     const classes = styles();
     return (
@@ -27,7 +27,7 @@ export default function Grid(props) {
                 {title}
             </Typography>
             <div className={classes.item}>
-                <CustomBtn txt={btnTitle}/>
+                <custombtn txt={btnTitle}/>
             </div>
         </div>
     )
