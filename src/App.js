@@ -15,10 +15,10 @@ import HttpIcon from '@material-ui/icons/Http';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main:"#2e1667",
+      main:"#80495f",
     },
     secondary: {
-      main:"#c7d8ed",
+      main:"#ee8c8b",
     },
   },
   typography: {
@@ -26,13 +26,14 @@ const theme = createMuiTheme({
       'Roboto'
     ],
     h4: {
-      fontWeight: 600,
+      fontWeight: 550,
       fontSize: 28,
       lineHeight: '2rem',
       },
     h5: {
-      fontWeight: 100,
+      fontWeight: 80,
       lineHeight: '2rem',
+      fontsize: 20
     },
   },
 });
@@ -66,7 +67,7 @@ function App() {
         <NavBar/>
         <div className={classes.wrapper}>
           <Typography variant="h4" className={classes.bigSpace} color="primary">
-             At Rocket.io we are passionate about software
+             At <b>my-app</b> we are passionate about software
           </Typography>
           <Typography variant="h5" className={classes.littleSpace} color="primary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales congue tristique. Cras non pretium sem. Duis interdum lorem sit amet ligula pretium, sed rutrum urna semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus egestas gravida ullamcorper.
