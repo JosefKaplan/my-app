@@ -10,7 +10,8 @@ import logo from '../logo.svg';
 import logoMobile from '../logoMobile.svg';
 
 //Material-UI
-import {Toolbar, Typography} from '@material-ui/core';
+// eslint-disable-next-line
+import {Toolbar, Typography} from '@material-ui/core'; // eslint-disable-next-line
 import {makeStyles} from "@material-ui/core/styles"; 
 
 function NavBar() {

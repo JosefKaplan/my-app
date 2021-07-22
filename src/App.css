@@ -1,6 +1,45 @@
 .App {
   text-align: center;
 }
+p {
+  text-decoration: none;
+  color:#80495f; 
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  color:#80495f; 
+}
+
+.image {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.object:hover {
+  -webkit-transform: scale(0.95);
+	transform: scale(0.95);
+	animation-iteration-count: infinite;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.25s;
+  
+}
+.object:not(:hover) {
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  box-shadow: 6px 6px 0 0 #80495f;
+}
+
+.object {
+  border: 5px solid #f3a1b3;
+  border-radius: 0px;
+  margin: 10px 20% 20px 20%;
+}
 
 .App-logo {
   height: 40vmin;

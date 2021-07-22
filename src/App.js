@@ -1,4 +1,4 @@
-//materail style
+//Materail UI style
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import {Typography} from '@material-ui/core'; 
 
@@ -13,8 +13,9 @@ import About from './components/About';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Shop from './components/Shop';
+import ItemDetail from './components/ItemDetail';
 
-//React Router
+//React Router + Switch
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //changes to imports 
@@ -82,9 +83,10 @@ function App() {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />
-              <Route path="/shop" component={Shop} />
+              <Route path="/shop" exact component={Shop} />
               <Route path="/careers" component={Careers} />
               <Route path="/contact" component={Contact} />
+              <Route path="/shop/:id" component={ItemDetail}/>
             </Switch>
             <div className={classes.wrapper}>
               <Typography variant="h4" className={classes.bigSpace} color="primary">
