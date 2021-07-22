@@ -86,7 +86,7 @@ function App() {
               <Route path="/shop" exact component={Shop} />
               <Route path="/careers" component={Careers} />
               <Route path="/contact" component={Contact} />
-              <Route path="/shop/:id" component={ItemDetail}/>
+              
             </Switch>
             <div className={classes.wrapper}>
               <Typography variant="h4" className={classes.bigSpace} color="primary">

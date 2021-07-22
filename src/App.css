@@ -1,16 +1,23 @@
 .App {
   text-align: center;
 }
-p {
+
+p .object {
   text-decoration: none;
   color:#80495f; 
   font-weight: 600;
+  display: block;
+  padding: 0;
+  margin: 0.5em;
 }
 
 a {
   text-decoration: none;
   font-weight: 600;
   color:#80495f; 
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
 .image {
@@ -19,6 +26,7 @@ a {
   object-fit: cover;
   margin-top: 0px;
   margin-bottom: 0px;
+  display: block;
 }
 .object:hover {
   -webkit-transform: scale(0.95);
@@ -38,7 +46,10 @@ a {
 .object {
   border: 5px solid #f3a1b3;
   border-radius: 0px;
-  margin: 10px 20% 20px 20%;
+  width: min-content;
+  margin: 2em 1em;
+  padding: 0.5em;
+  display: block;
 }
 
 .App-logo {
@@ -50,6 +61,15 @@ a {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.customButton input{
+  padding: 1em;
+  margin: 0.5em;
+  display: inline-table;
+}
+.customButton button{
+  display: inline-table;
 }
 
 .App-header {
