@@ -70,7 +70,7 @@ export default function Shop() {
                                 </p>
                                 <p key={item.stars}>
                                     <b>Rating: </b>
-
+                                    {item.stars}
                                 </p>
 
                             </a>
