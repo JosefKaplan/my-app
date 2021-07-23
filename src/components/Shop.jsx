@@ -12,7 +12,7 @@ import CustomBtn from './CustomBtn';
 export default function Shop() {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('Macbook');
     const [query, setQuery] = useState('Macbook');
 
     useEffect(() => {
@@ -23,6 +23,7 @@ export default function Shop() {
                     "x-rapidapi-key": "3a9d02a797msh4ba4a9f637316e7p146eedjsnbbc734c68baf",
                     "x-rapidapi-host": "tvb-amazon-data-scraper.p.rapidapi.com"
                 }
+                
             });
             const items = await data.json();
             console.log(items.results);
@@ -69,7 +70,7 @@ export default function Shop() {
                                 </p>
                                 <p key={item.stars}>
                                     <b>Rating: </b>
-                                    <Rating name="half-rating-read" defaultValue={item.stars} precision={0.5} readOnly />
+
                                 </p>
 
                             </a>
