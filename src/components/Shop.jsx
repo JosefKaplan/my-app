@@ -57,7 +57,7 @@ export default function Shop() {
                 { isLoading && <div> Loading...</div>}
 
                 {items.map(item => (
-                            <a id="object" className="object" href={item.url}>
+                            <a id="object" className="object" href={item.url} target="blank">
                                 <p key={item.url}>
                                     {(item.name).slice(0,30) + '...'}
                                 </p>
