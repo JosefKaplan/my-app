@@ -12,19 +12,12 @@ import CustomBtn from './CustomBtn';
 export default function Shop() {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [search, setSearch] = useState('Macbook');
-    const [query, setQuery] = useState('Macbook');
+    const [search, setSearch] = useState('love and other cliches');
+    const [query, setQuery] = useState('love and other cliches');
 
     useEffect(() => {
         const fetchItems = async() => {
-            const data = await fetch(`https://tvb-amazon-data-scraper.p.rapidapi.com/search/${query}?api_key=a438be699e1c4f2b1e62ff649419355b`, {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "3a9d02a797msh4ba4a9f637316e7p146eedjsnbbc734c68baf",
-                    "x-rapidapi-host": "tvb-amazon-data-scraper.p.rapidapi.com"
-                }
-                
-            });
+            const data = await fetch(`https://itunes.apple.com/search?term=${query}&limit=40.`);
             const items = await data.json();
             console.log(items.results);
             setItems(items.results);
@@ -34,8 +27,8 @@ export default function Shop() {
     },[query]);
 
     function pricingItem(price) {
-        if (Number.isInteger(price) === true) {
-            return price+' $';
+        if (Number.isInteger(Math.ceil(price)) === true) {
+            return price + ' $';
         }else {
             return 'Not specified.'
             }
@@ -44,12 +37,12 @@ export default function Shop() {
     return (
         <div>
             <center>
-                <h1>Shop from here in Amazon store</h1>
+                <h1>Lookup music at Itunes</h1>
                 <div className="customButton">
                     <input
                         type="text"
                         value={query}
-                        onChange={event => setQuery(event.target.value)}
+                        onChange={event => setQuery(event.target.value) & setIsLoading(true)}
                         className="input"
                     />
                     <CustomBtn className="button"type="button" onClick={() => setSearch(query)} txt="Search"/>
@@ -57,20 +50,27 @@ export default function Shop() {
                 { isLoading && <div> Loading...</div>}
 
                 {items.map(item => (
-                            <a id="object" className="object" href={item.url} target="blank">
-                                <p key={item.url}>
-                                    {(item.name).slice(0,30) + '...'}
+                            <a id="object" className="object" href={item.trackViewUrl} target="blank">
+                                <h2 key={item.trackViewUrl}>
+                                    {item.artistName}
+                                </h2>
+                                <p key={item.trackName}>
+                                    {item.trackName}
                                 </p>
-                                <center>
-                                    <img key={item.image} src={item.image} alt="image 300x200" className="image"></img>
-                                </center>
-                                <p key={item.price}>
+                                <div>
+                                    <img key={item.artworkUrl100} src={item.artworkUrl100} alt="image 100x100" className="image"></img>
+                                </div>
+                                <p key={item.trackPrice}>
                                     <b>Price: </b>
-                                    {pricingItem(item.price)}
+                                    {pricingItem(item.trackPrice)}
                                 </p>
-                                <p key={item.stars}>
-                                    <b>Rating: </b>
-                                    {item.stars}
+                                <p key={item.primaryGenreName}>
+                                    <b>Genre: </b>
+                                    {item.primaryGenreName}
+                                </p>
+                                <p key={item.releaseDate}>
+                                    <b>Released: </b>
+                                     {item.releaseDate.slice(0,4)}
                                 </p>
 
                             </a>
